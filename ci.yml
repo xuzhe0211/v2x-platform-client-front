@@ -1,0 +1,18 @@
+Global:
+    tool: build_submitter
+
+Default:
+    profile: [buildProduction]
+
+Profiles:
+    - profile:
+      name: buildProduction
+      env: cmc_standard
+      command: export NODE_ENV=production && sh bin/build.sh
+      release: true
+
+    - profile:
+      name: buildDevelopment
+      env: cmc_standard
+      command: export NODE_ENV=development && sh bin/build.sh
+      release: true
